@@ -58,6 +58,8 @@ target 'sedolistDemo04' do
 
   pod 'react-native-image-picker', :path => '../node_modules/react-native-image-picker'
 
+  pod 'TextToSpeech', :path => '../node_modules/react-native-tts'
+
   target 'sedolistDemo04Tests' do
     inherit! :complete
     # Pods for testing

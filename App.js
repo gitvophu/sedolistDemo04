@@ -20,8 +20,10 @@ import {
 } from 'react-native';
 
 import ImagePicker from 'react-native-image-picker';
-
+import {speak,test,stopSpeak} from './src/modules/Tts';
 const App = () => {
+
+
   const options = {
     title: 'Select Avatar',
     customButtons: [{ name: 'fb', title: 'Choose Photo from Facebook' }],
@@ -77,11 +79,18 @@ const App = () => {
     <View style={styles.container}>
       <Text style={styles.title}>DEMO ĐỌC TEXT TỪ HÌNH ẢNH</Text>
       <Text>Hướng dẫn: </Text>
-      <Text>Hãy bấm {`<Chọn ảnh>`} để load ảnh cần load text => Sau khi chọn xong, các text tìm thấy sẽ hiển thị phía dưới </Text>
+      <Text>- Hãy bấm {`<Chọn ảnh>`} để load ảnh cần load text => Sau khi chọn xong, các text tìm thấy sẽ hiển thị phía dưới</Text>
+      <Text>- Hãy bấm {`<Đọc text thành tiếng>`} để nghe âm thanh chuyển đổi từ text</Text>
+      <Text>Lưu ý là chọn ảnh có text tiếng Anh nhé. Vì mặc định giọng đọc tiếng Anh</Text>
       <View style={styles.btnLoad}>
         <Button  title="Chọn ảnh" onPress={()=>loadImage()}/>
       </View>
-      
+      <View style={styles.btnLoad}>
+        <Button  title="Đọc text thành tiếng" onPress={()=>speak(content)}/>
+      </View>
+      <View style={styles.btnLoad}>
+        <Button  title="Dừng Đọc" onPress={()=>stopSpeak()}/>
+      </View>
       <Text>Nội dung đọc được: </Text>
       <Text style={styles.content}>{content}</Text>
     </View>
@@ -99,7 +108,7 @@ const styles = StyleSheet.create({
     alignSelf:'center'
   },
   btnLoad:{
-    marginVertical:15,
+    marginVertical:5,
   },
   content: {
     color:"blue"
