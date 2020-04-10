@@ -1,6 +1,6 @@
 import Tts from 'react-native-tts';
 
-Tts.setDefaultLanguage('en-IE');
+Tts.setDefaultLanguage('ja-JP');
 
 const useTts = () =>{
     

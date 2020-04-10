@@ -56,13 +56,14 @@ const App = () => {
   const loadTextFromImage = (imgPath)=>{
     const tessOptions = {
       whitelist: null, 
-      blacklist: '1234567890\'!"#$%&/()={}[]+*-_:;<>'
+      // blacklist: '1234567890\'!"#$%&/()={}[]+*-_:;<>',
+      blacklist:null
     };
     // const imgPath = '';
     console.log(imgPath);
     // img = require('./src/assets/img/text-img.png');
     // console.log(img);
-    const lang = 'LANG_ENGLISH';
+    const lang = 'LANG_JAPANESE';
     RNTesseractOcr.recognize(imgPath, lang, tessOptions)
       .then((result) => {
         // this.setState({ ocrResult: result });
